@@ -751,7 +751,7 @@ export default function LandingPage() {
               const email = prompt('What\'s your email?');
               const projectDetails = prompt('Tell me briefly about your project:');
               if (email && projectDetails) {
-                window.location.href = `mailto:patrickaiya@gmail.com?subject=Project Inquiry from ${email}&body=Hi Patrick,%0A%0AProject: ${encodeURIComponent(projectDetails)}%0A%0AContact: ${email}`;
+                window.location.href = `mailto:patrickaiya3@gmail.com?subject=Project Inquiry from ${email}&body=Hi Patrick,%0A%0AProject: ${encodeURIComponent(projectDetails)}%0A%0AContact: ${email}`;
               }
             }}>
               Let's Build It
@@ -824,7 +824,7 @@ export default function LandingPage() {
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Instagram
                 </a>
-                <a href="mailto:patrickaiya@gmail.com" style={{
+                <a href="mailto:patrickaiya3@gmail.com" style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
                   transition: 'color 0.3s',
@@ -832,7 +832,7 @@ export default function LandingPage() {
                   touchAction: 'manipulation'
                 }} onMouseEnter={(e) => e.currentTarget.style.color = '#FF6B35'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
-                  → Email: patrickaiya@gmail.com
+                  → Email: patrickaiya3@gmail.com
                 </a>
                 <a href="https://wa.me/41779131342" target="_blank" rel="noopener noreferrer" style={{
                   color: '#9CA3AF',
