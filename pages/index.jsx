@@ -71,11 +71,78 @@ export default function LandingPage() {
             transform: translateX(0);
           }
         }
+
+        @keyframes orbit {
+          0% { transform: rotateZ(0deg) translateX(150px) rotateZ(0deg); }
+          100% { transform: rotateZ(360deg) translateX(150px) rotateZ(-360deg); }
+        }
+
+        @keyframes fade-in-scale {
+          0% { opacity: 0; transform: scale(0.8); }
+          100% { opacity: 1; transform: scale(1); }
+        }
         
         .hero-text { animation: slide-in-left 0.8s ease 0.2s both; }
         .hero-image { animation: slide-in-right 0.8s ease 0.2s both; }
         .hero-image img { animation: float 3s ease-in-out infinite; }
         .hero-image .glow { animation: glow-pulse 3s ease-in-out infinite; }
+        
+        .carousel-container {
+          width: 500px;
+          height: 500px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .carousel-center {
+          width: 280px;
+          height: 280px;
+          border-radius: 50%;
+          background: radial-gradient(circle at 30% 30%, rgba(255,107,53,0.3), transparent);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          z-index: 10;
+          box-shadow: 0 0 60px rgba(255, 107, 53, 0.2);
+          animation: glow-pulse 3s ease-in-out infinite;
+        }
+        
+        .carousel-center img {
+          width: 260px;
+          height: 260px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid #FF6B35;
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .orbit-item {
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          animation: orbit 8s linear infinite;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .orbit-item img {
+          width: 85px;
+          height: 85px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #FF6B35;
+          box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+          animation: fade-in-scale 0.6s ease;
+        }
+        
+        .orbit-item:nth-child(1) { animation-delay: 0s; }
+        .orbit-item:nth-child(2) { animation-delay: -2s; }
+        .orbit-item:nth-child(3) { animation-delay: -4s; }
+        .orbit-item:nth-child(4) { animation-delay: -6s; }
         
         @media (max-width: 768px) {
           .hero-grid {
@@ -151,10 +218,11 @@ export default function LandingPage() {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         alignItems: 'center',
-        gap: '60px',
+        gap: '80px',
         padding: '80px 40px',
         position: 'relative',
-        background: 'linear-gradient(135deg, #080A0D 0%, #11151B 100%)'
+        background: 'linear-gradient(135deg, #080A0D 0%, #11151B 100%, #080A0D 100%)',
+        overflow: 'hidden'
       }} className="hero-grid">
         {/* Left: Text */}
         <div style={{ position: 'relative', zIndex: 10 }} className="hero-text">
@@ -163,59 +231,74 @@ export default function LandingPage() {
             fontWeight: '600',
             color: '#FF6B35',
             textTransform: 'uppercase',
-            letterSpacing: '2px',
-            marginBottom: '24px'
+            letterSpacing: '3px',
+            marginBottom: '24px',
+            opacity: 0.9
           }}>
             Builder / Developer / AI Specialist
           </div>
 
           <h1 style={{
-            fontSize: 'clamp(32px, 8vw, 64px)',
-            fontWeight: '700',
-            lineHeight: '1.1',
+            fontSize: 'clamp(40px, 10vw, 72px)',
+            fontWeight: '800',
+            lineHeight: '1.05',
             marginBottom: '24px',
-            color: '#F5F3EE'
+            color: '#F5F3EE',
+            letterSpacing: '-1px'
           }}>
             I'm Trues.
           </h1>
 
           <h2 style={{
-            fontSize: 'clamp(24px, 6vw, 48px)',
-            fontWeight: '600',
-            lineHeight: '1.2',
-            marginBottom: '32px',
-            color: '#D89B32'
+            fontSize: 'clamp(28px, 7vw, 56px)',
+            fontWeight: '700',
+            lineHeight: '1.15',
+            marginBottom: '40px',
+            background: 'linear-gradient(135deg, #D89B32 0%, #FF6B35 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
           }}>
             I build digital products, AI automations & web experiences.
           </h2>
 
           <p style={{
-            fontSize: '18px',
+            fontSize: 'clamp(16px, 4vw, 20px)',
             lineHeight: '1.8',
             color: '#9CA3AF',
-            marginBottom: '40px',
-            maxWidth: '500px'
+            marginBottom: '48px',
+            maxWidth: '550px',
+            fontWeight: '500'
           }}>
-            Currently building <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B35', textDecoration: 'none', fontWeight: '600', cursor: 'pointer' }}>Afrovia</a> — a marketplace connecting African diaspora communities in Europe with verified local service providers.
+            Currently building <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B35', textDecoration: 'none', fontWeight: '700', cursor: 'pointer', borderBottom: '2px solid #FF6B35' }}>Afrovia</a> — a marketplace connecting African diaspora communities in Europe with verified local service providers.
           </p>
 
           <div style={{
             display: 'flex',
-            gap: '16px',
-            flexWrap: 'wrap'
+            gap: '20px',
+            flexWrap: 'wrap',
+            marginTop: '40px'
           }}>
             <button style={{
-              background: '#FF6B35',
+              background: 'linear-gradient(135deg, #FF6B35 0%, #FF8555 100%)',
               color: '#080A0D',
               border: 'none',
-              padding: '16px 32px',
-              borderRadius: '8px',
+              padding: '18px 42px',
+              borderRadius: '10px',
               fontSize: '16px',
-              fontWeight: '600',
+              fontWeight: '700',
               cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }} onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
-            onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+              transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              boxShadow: '0 10px 30px rgba(255, 107, 53, 0.3)',
+              letterSpacing: '0.5px'
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 20px 40px rgba(255, 107, 53, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 10px 30px rgba(255, 107, 53, 0.3)';
+            }}
             onClick={() => {
               const el = document.getElementById('work');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -226,19 +309,22 @@ export default function LandingPage() {
               background: 'transparent',
               border: '2px solid #FF6B35',
               color: '#FF6B35',
-              padding: '14px 30px',
-              borderRadius: '8px',
+              padding: '16px 40px',
+              borderRadius: '10px',
               fontSize: '16px',
-              fontWeight: '600',
+              fontWeight: '700',
               cursor: 'pointer',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              letterSpacing: '0.5px'
             }} onMouseEnter={(e) => {
               e.currentTarget.style.background = '#FF6B35';
               e.currentTarget.style.color = '#080A0D';
+              e.currentTarget.style.transform = 'translateY(-4px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent';
               e.currentTarget.style.color = '#FF6B35';
+              e.currentTarget.style.transform = 'translateY(0)';
             }}
             onClick={() => {
               const el = document.getElementById('services');
@@ -249,44 +335,34 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Right: Image with Editorial Treatment */}
+        {/* Right: Animated Carousel */}
         <div style={{
           position: 'relative',
-          height: '500px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: '300px'
+          minHeight: '500px'
         }} className="hero-image">
-          <div style={{
-            position: 'absolute',
-            width: '300px',
-            height: '300px',
-            background: 'radial-gradient(circle, rgba(255,107,53,0.2) 0%, transparent 70%)',
-            borderRadius: '50%',
-            filter: 'blur(40px)'
-          }} className="glow" />
-          <img
-            src="/photo.jpg"
-            alt="Trues"
-            style={{
-              width: '100%',
-              maxWidth: '350px',
-              borderRadius: '12px',
-              boxShadow: '0 20px 60px rgba(255, 107, 53, 0.15)',
-              position: 'relative',
-              zIndex: 5,
-              border: '1px solid rgba(255, 107, 53, 0.2)'
-            }}
-            loading="lazy"
-          />
-          <div style={{
-            position: 'absolute',
-            inset: '-2px',
-            borderRadius: '12px',
-            background: 'linear-gradient(135deg, rgba(255,107,53,0.2), transparent)',
-            pointerEvents: 'none'
-          }} />
+          <div className="carousel-container">
+            {/* Orbiting provider images */}
+            <div className="orbit-item">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop" alt="Provider 1" />
+            </div>
+            <div className="orbit-item">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Provider 2" />
+            </div>
+            <div className="orbit-item">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop" alt="Provider 3" />
+            </div>
+            <div className="orbit-item">
+              <img src="https://images.unsplash.com/photo-1507051957259-fe2df1d68ecb?w=120&h=120&fit=crop" alt="Provider 4" />
+            </div>
+
+            {/* Center image */}
+            <div className="carousel-center">
+              <img src="/photo.jpg" alt="Trues" />
+            </div>
+          </div>
         </div>
       </section>
 
