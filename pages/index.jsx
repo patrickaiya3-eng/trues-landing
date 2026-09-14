@@ -844,6 +844,8 @@ export default function LandingPage() {
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → WhatsApp: +41 77 913 1342
                 </a>
+              </div>
+            </div>
 
             <div>
               <div style={{ fontSize: '14px', fontWeight: '600', color: '#D89B32', textTransform: 'uppercase', marginBottom: '16px' }}>
