@@ -834,6 +834,16 @@ export default function LandingPage() {
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Email: patrickaiya@gmail.com
                 </a>
+                <a href="https://wa.me/41779131342" target="_blank" rel="noopener noreferrer" style={{
+                  color: '#9CA3AF',
+                  textDecoration: 'none',
+                  transition: 'color 0.3s',
+                  cursor: 'pointer',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#FF6B35'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
+                  → WhatsApp: +41 77 913 1342
+                </a>
 
             <div>
               <div style={{ fontSize: '14px', fontWeight: '600', color: '#D89B32', textTransform: 'uppercase', marginBottom: '16px' }}>
