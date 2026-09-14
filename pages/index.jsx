@@ -196,7 +196,7 @@ export default function LandingPage() {
             marginBottom: '40px',
             maxWidth: '500px'
           }}>
-            Currently building <strong style={{ color: '#FF6B35' }}>Afrovia</strong> — a marketplace connecting African diaspora communities in Europe with verified local service providers.
+            Currently building <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B35', textDecoration: 'none', fontWeight: '600', cursor: 'pointer' }}>Afrovia</a> — a marketplace connecting African diaspora communities in Europe with verified local service providers.
           </p>
 
           <div style={{
@@ -390,7 +390,7 @@ export default function LandingPage() {
           </div>
 
           <div style={{ marginTop: '40px' }}>
-            <button style={{
+            <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{
               display: 'inline-block',
               color: '#FF6B35',
               textDecoration: 'none',
@@ -403,14 +403,14 @@ export default function LandingPage() {
               cursor: 'pointer',
               background: 'transparent'
             }} onMouseEnter={(e) => {
-              e.target.style.background = '#FF6B35';
-              e.target.style.color = '#080A0D';
+              e.currentTarget.style.background = '#FF6B35';
+              e.currentTarget.style.color = '#080A0D';
             }} onMouseLeave={(e) => {
-              e.target.style.background = 'transparent';
-              e.target.style.color = '#FF6B35';
-            }} onClick={() => alert('Afrovia link coming soon')}>
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = '#FF6B35';
+            }}>
               Explore Afrovia →
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -754,24 +754,16 @@ export default function LandingPage() {
                 flexDirection: 'column',
                 gap: '12px'
               }}>
-                <button onClick={() => {
-                  const el = document.getElementById('work');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }} style={{
+                <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
                   transition: 'color 0.3s',
                   cursor: 'pointer',
-                  background: 'none',
-                  border: 'none',
-                  padding: 0,
-                  fontSize: 'inherit',
-                  fontFamily: 'inherit',
                   touchAction: 'manipulation'
                 }} onMouseEnter={(e) => e.currentTarget.style.color = '#D89B32'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Afrovia
-                </button>
+                </a>
                 <button onClick={() => alert('Web projects coming soon')} style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
