@@ -192,7 +192,7 @@ export default function LandingPage() {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <div style={{ fontSize: '18px', fontWeight: '600', color: '#FF6B35' }}>Trues</div>
+        <div style={{ fontSize: '18px', fontWeight: '600', color: '#FF6B35' }}>Patrick Trues</div>
         <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
           <a href="#work" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px', cursor: 'pointer' }}>Work</a>
           <a href="#services" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px', cursor: 'pointer' }}>Services</a>
@@ -246,7 +246,7 @@ export default function LandingPage() {
             color: '#F5F3EE',
             letterSpacing: '-1px'
           }}>
-            I'm Trues.
+            I'm Patrick Trues.
           </h1>
 
           <h2 style={{
@@ -747,7 +747,13 @@ export default function LandingPage() {
               touchAction: 'manipulation'
             }} onMouseEnter={(e) => e.target.style.transform = 'translateY(-3px)'}
             onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
-            onClick={() => alert('Contact form coming soon - Email: hello@trues.dev')}>
+            onClick={() => {
+              const email = prompt('What\'s your email?');
+              const projectDetails = prompt('Tell me briefly about your project:');
+              if (email && projectDetails) {
+                window.location.href = `mailto:patrickaiya@gmail.com?subject=Project Inquiry from ${email}&body=Hi Patrick,%0A%0AProject: ${encodeURIComponent(projectDetails)}%0A%0AContact: ${email}`;
+              }
+            }}>
               Let's Build It
             </button>
             <a href="https://www.instagram.com/innerforge0/" target="_blank" rel="noopener noreferrer" style={{
@@ -818,8 +824,16 @@ export default function LandingPage() {
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Instagram
                 </a>
-              </div>
-            </div>
+                <a href="mailto:patrickaiya@gmail.com" style={{
+                  color: '#9CA3AF',
+                  textDecoration: 'none',
+                  transition: 'color 0.3s',
+                  cursor: 'pointer',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#FF6B35'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
+                  → Email: patrickaiya@gmail.com
+                </a>
 
             <div>
               <div style={{ fontSize: '14px', fontWeight: '600', color: '#D89B32', textTransform: 'uppercase', marginBottom: '16px' }}>
@@ -915,7 +929,7 @@ export default function LandingPage() {
             fontSize: '14px'
           }}>
             <p>Built with intent. No templates. No shortcuts.</p>
-            <p style={{ margin: '8px 0 0 0' }}>© 2026 Trues. Building digital products & AI automation systems.</p>
+            <p style={{ margin: '8px 0 0 0' }}>© 2026 Patrick Trues. Building digital products & AI automation systems.</p>
           </div>
         </div>
       </section>
