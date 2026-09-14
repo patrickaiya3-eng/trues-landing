@@ -29,9 +29,87 @@ export default function LandingPage() {
       background: '#080A0D',
       color: '#F5F3EE',
       minHeight: '100vh',
-      fontFamily: 'inherit',
-      overflow: 'hidden'
+      fontFamily: 'inherit'
     }}>
+      <style>{`
+        * {
+          scroll-behavior: smooth;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow-pulse {
+          0%, 100% { 
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
+          }
+          50% { 
+            box-shadow: 0 25px 70px rgba(255, 107, 53, 0.25);
+          }
+        }
+        
+        @keyframes slide-in-left {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes slide-in-right {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .hero-text { animation: slide-in-left 0.8s ease 0.2s both; }
+        .hero-image { animation: slide-in-right 0.8s ease 0.2s both; }
+        .hero-image img { animation: float 3s ease-in-out infinite; }
+        .hero-image .glow { animation: glow-pulse 3s ease-in-out infinite; }
+        
+        @media (max-width: 768px) {
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          
+          .nav-links {
+            display: none !important;
+          }
+        }
+        
+        button, a {
+          transition: all 0.3s ease;
+        }
+        
+        button:active, a:active {
+          transform: translateY(-2px);
+        }
+        
+        @media (max-width: 480px) {
+          h1 {
+            font-size: 32px !important;
+          }
+          
+          h2 {
+            font-size: 24px !important;
+          }
+          
+          .section-padding {
+            padding: 60px 20px !important;
+          }
+        }
+      `}</style>
       
       {/* STICKY NAV */}
       <nav style={{
@@ -48,9 +126,9 @@ export default function LandingPage() {
         alignItems: 'center'
       }}>
         <div style={{ fontSize: '18px', fontWeight: '600', color: '#FF6B35' }}>Trues</div>
-        <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-          <a href="#work" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px' }}>Work</a>
-          <a href="#services" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px' }}>Services</a>
+        <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+          <a href="#work" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px', cursor: 'pointer' }}>Work</a>
+          <a href="#services" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px', cursor: 'pointer' }}>Services</a>
           <button style={{
             background: '#FF6B35',
             color: '#080A0D',
@@ -60,6 +138,9 @@ export default function LandingPage() {
             fontSize: '14px',
             fontWeight: '600',
             cursor: 'pointer'
+          }} onClick={() => {
+            const el = document.getElementById('services');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}>Work With Me</button>
         </div>
       </nav>
@@ -73,15 +154,10 @@ export default function LandingPage() {
         gap: '60px',
         padding: '80px 40px',
         position: 'relative',
-        background: 'linear-gradient(135deg, #080A0D 0%, #11151B 100%)',
-        '@media (max-width: 768px)': {
-          gridTemplateColumns: '1fr',
-          padding: '60px 20px',
-          gap: '40px'
-        }
-      }}>
+        background: 'linear-gradient(135deg, #080A0D 0%, #11151B 100%)'
+      }} className="hero-grid">
         {/* Left: Text */}
-        <div style={{ position: 'relative', zIndex: 10 }}>
+        <div style={{ position: 'relative', zIndex: 10 }} className="hero-text">
           <div style={{
             fontSize: '12px',
             fontWeight: '600',
@@ -139,7 +215,11 @@ export default function LandingPage() {
               cursor: 'pointer',
               transition: 'all 0.3s ease'
             }} onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
-            onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}>
+            onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+            onClick={() => {
+              const el = document.getElementById('work');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}>
               Explore My Work
             </button>
             <button style={{
@@ -153,12 +233,16 @@ export default function LandingPage() {
               cursor: 'pointer',
               transition: 'all 0.3s ease'
             }} onMouseEnter={(e) => {
-              e.target.style.background = '#FF6B35';
-              e.target.style.color = '#080A0D';
+              e.currentTarget.style.background = '#FF6B35';
+              e.currentTarget.style.color = '#080A0D';
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = 'transparent';
-              e.target.style.color = '#FF6B35';
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = '#FF6B35';
+            }}
+            onClick={() => {
+              const el = document.getElementById('services');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}>
               Work With Me
             </button>
@@ -171,17 +255,17 @@ export default function LandingPage() {
           height: '500px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
-        }}>
+          justifyContent: 'center',
+          minHeight: '300px'
+        }} className="hero-image">
           <div style={{
             position: 'absolute',
             width: '300px',
             height: '300px',
             background: 'radial-gradient(circle, rgba(255,107,53,0.2) 0%, transparent 70%)',
             borderRadius: '50%',
-            filter: 'blur(40px)',
-            animation: 'pulse 4s ease-in-out infinite'
-          }} />
+            filter: 'blur(40px)'
+          }} className="glow" />
           <img
             src="/photo.jpg"
             alt="Trues"
@@ -194,6 +278,7 @@ export default function LandingPage() {
               zIndex: 5,
               border: '1px solid rgba(255, 107, 53, 0.2)'
             }}
+            loading="lazy"
           />
           <div style={{
             position: 'absolute',
@@ -205,19 +290,12 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-        }
-      `}</style>
-
       {/* FLAGSHIP PROJECT: AFROVIA */}
-      <section id="work" style={{
+      <section id="work" className="section-padding" style={{
         padding: '100px 40px',
         background: '#11151B',
         borderTop: '1px solid rgba(255, 107, 53, 0.1)'
-      }}>
+      }} onTouchStart={() => null}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ marginBottom: '60px' }}>
             <div style={{
@@ -312,7 +390,7 @@ export default function LandingPage() {
           </div>
 
           <div style={{ marginTop: '40px' }}>
-            <a href="#" style={{
+            <button style={{
               display: 'inline-block',
               color: '#FF6B35',
               textDecoration: 'none',
@@ -322,22 +400,23 @@ export default function LandingPage() {
               border: '1px solid #FF6B35',
               borderRadius: '6px',
               transition: 'all 0.3s ease',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              background: 'transparent'
             }} onMouseEnter={(e) => {
               e.target.style.background = '#FF6B35';
               e.target.style.color = '#080A0D';
             }} onMouseLeave={(e) => {
               e.target.style.background = 'transparent';
               e.target.style.color = '#FF6B35';
-            }}>
+            }} onClick={() => alert('Afrovia link coming soon')}>
               Explore Afrovia →
-            </a>
+            </button>
           </div>
         </div>
       </section>
 
       {/* AI AUTOMATION SECTION */}
-      <section style={{
+      <section className="section-padding" style={{
         padding: '100px 40px',
         background: '#080A0D',
         borderTop: '1px solid rgba(255, 107, 53, 0.1)'
@@ -413,7 +492,7 @@ export default function LandingPage() {
       </section>
 
       {/* WEB DEVELOPMENT SECTION */}
-      <section style={{
+      <section className="section-padding" style={{
         padding: '100px 40px',
         background: '#11151B',
         borderTop: '1px solid rgba(255, 107, 53, 0.1)'
@@ -431,7 +510,7 @@ export default function LandingPage() {
               DEVELOPMENT
             </div>
             <h2 style={{
-              fontSize: '48px',
+              fontSize: 'clamp(32px, 8vw, 48px)',
               fontWeight: '700',
               color: '#F5F3EE',
               marginBottom: '16px'
@@ -479,14 +558,14 @@ export default function LandingPage() {
       </section>
 
       {/* SERVICES OFFERING */}
-      <section id="services" style={{
+      <section id="services" className="section-padding" style={{
         padding: '100px 40px',
         background: '#080A0D'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ marginBottom: '60px', textAlign: 'center' }}>
             <h2 style={{
-              fontSize: '48px',
+              fontSize: 'clamp(32px, 8vw, 48px)',
               fontWeight: '700',
               color: '#F5F3EE',
               marginBottom: '16px'
@@ -548,7 +627,7 @@ export default function LandingPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section style={{
+      <section className="section-padding" style={{
         padding: '120px 40px',
         background: '#11151B',
         textAlign: 'center',
@@ -556,7 +635,7 @@ export default function LandingPage() {
       }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '48px',
+            fontSize: 'clamp(32px, 8vw, 48px)',
             fontWeight: '700',
             color: '#F5F3EE',
             marginBottom: '24px',
@@ -565,7 +644,7 @@ export default function LandingPage() {
             Have an idea worth building?
           </h2>
           <p style={{
-            fontSize: '20px',
+            fontSize: 'clamp(16px, 4vw, 20px)',
             color: '#9CA3AF',
             marginBottom: '40px',
             lineHeight: '1.8'
@@ -588,9 +667,11 @@ export default function LandingPage() {
               fontSize: '16px',
               fontWeight: '600',
               cursor: 'pointer',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              touchAction: 'manipulation'
             }} onMouseEnter={(e) => e.target.style.transform = 'translateY(-3px)'}
-            onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}>
+            onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+            onClick={() => alert('Contact form coming soon - Email: hello@trues.dev')}>
               Let's Build It
             </button>
             <a href="https://www.instagram.com/innerforge0/" target="_blank" rel="noopener noreferrer" style={{
@@ -604,7 +685,8 @@ export default function LandingPage() {
               cursor: 'pointer',
               textDecoration: 'none',
               transition: 'all 0.3s ease',
-              display: 'inline-block'
+              display: 'inline-block',
+              touchAction: 'manipulation'
             }} onMouseEnter={(e) => {
               e.currentTarget.style.background = '#FF6B35';
               e.currentTarget.style.color = '#080A0D';
@@ -619,7 +701,7 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER / SOCIAL LINKS */}
-      <section style={{
+      <section className="section-padding" style={{
         padding: '60px 40px',
         background: '#080A0D',
         borderTop: '1px solid rgba(255, 107, 53, 0.1)'
@@ -628,7 +710,7 @@ export default function LandingPage() {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '60px',
+            gap: '40px',
             marginBottom: '60px'
           }}>
             <div>
@@ -643,17 +725,21 @@ export default function LandingPage() {
                 <a href="https://www.youtube.com/@TrueStoryTime11" target="_blank" rel="noopener noreferrer" style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
-                  transition: 'color 0.3s'
-                }} onMouseEnter={(e) => e.target.style.color = '#FF6B35'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                  transition: 'color 0.3s',
+                  cursor: 'pointer',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#FF6B35'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → YouTube
                 </a>
                 <a href="https://www.instagram.com/innerforge0/" target="_blank" rel="noopener noreferrer" style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
-                  transition: 'color 0.3s'
-                }} onMouseEnter={(e) => e.target.style.color = '#FF6B35'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                  transition: 'color 0.3s',
+                  cursor: 'pointer',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#FF6B35'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Instagram
                 </a>
               </div>
@@ -668,23 +754,39 @@ export default function LandingPage() {
                 flexDirection: 'column',
                 gap: '12px'
               }}>
-                <a href="#work" style={{
+                <button onClick={() => {
+                  const el = document.getElementById('work');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }} style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
                   transition: 'color 0.3s',
-                  cursor: 'pointer'
-                }} onMouseEnter={(e) => e.target.style.color = '#D89B32'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                  cursor: 'pointer',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  fontSize: 'inherit',
+                  fontFamily: 'inherit',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#D89B32'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Afrovia
-                </a>
-                <a href="#" style={{
+                </button>
+                <button onClick={() => alert('Web projects coming soon')} style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
-                  transition: 'color 0.3s'
-                }} onMouseEnter={(e) => e.target.style.color = '#D89B32'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                  transition: 'color 0.3s',
+                  cursor: 'pointer',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  fontSize: 'inherit',
+                  fontFamily: 'inherit',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#D89B32'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Web Projects
-                </a>
+                </button>
               </div>
             </div>
 
@@ -697,24 +799,42 @@ export default function LandingPage() {
                 flexDirection: 'column',
                 gap: '12px'
               }}>
-                <a href="#services" style={{
+                <button onClick={() => {
+                  const el = document.getElementById('services');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }} style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
                   transition: 'color 0.3s',
-                  cursor: 'pointer'
-                }} onMouseEnter={(e) => e.target.style.color = '#FF6B35'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                  cursor: 'pointer',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  fontSize: 'inherit',
+                  fontFamily: 'inherit',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#FF6B35'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → AI Automation
-                </a>
-                <a href="#services" style={{
+                </button>
+                <button onClick={() => {
+                  const el = document.getElementById('services');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }} style={{
                   color: '#9CA3AF',
                   textDecoration: 'none',
                   transition: 'color 0.3s',
-                  cursor: 'pointer'
-                }} onMouseEnter={(e) => e.target.style.color = '#FF6B35'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                  cursor: 'pointer',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  fontSize: 'inherit',
+                  fontFamily: 'inherit',
+                  touchAction: 'manipulation'
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#FF6B35'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Web Development
-                </a>
+                </button>
               </div>
             </div>
           </div>
