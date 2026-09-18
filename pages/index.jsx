@@ -621,7 +621,8 @@ export default function LandingPage() {
               e.currentTarget.style.background = 'transparent';
               e.currentTarget.style.color = '#10B981';
               e.currentTarget.style.transform = 'translateY(0)';
-            }}\n            onClick={() => setShowModal(true)}>
+            }}
+            onClick={() => setShowModal(true)}>
               Work With Me
             </button>
           </div>
