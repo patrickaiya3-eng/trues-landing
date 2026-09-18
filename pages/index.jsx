@@ -31,7 +31,7 @@ export default function LandingPage() {
     
     try {
       // Send data to n8n webhook
-      const response = await fetch('https://n8n.srv1230177.hstgr.cloud/webhook-test/contact-form', {
+      const response = await fetch('https://n8n.srv1230177.hstgr.cloud/webhook/contact-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
