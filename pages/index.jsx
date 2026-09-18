@@ -46,7 +46,7 @@ export default function LandingPage() {
       });
 
       if (response.ok) {
-        alert('✅ Message sent! I'll get back to you within 24 hours.');
+        alert('Message sent! I will get back to you within 24 hours.');
         setFormData({ name: '', email: '', message: '', projectType: '' });
         setShowModal(false);
       } else {
