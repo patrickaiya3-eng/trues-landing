@@ -151,7 +151,7 @@ export default function LandingPage() {
           height: 260px;
           border-radius: 50%;
           object-fit: cover;
-          border: 3px solid #9B7653;
+          border: 3px solid #059669;
           animation: float 3s ease-in-out infinite;
         }
         
@@ -170,7 +170,7 @@ export default function LandingPage() {
           height: 85px;
           border-radius: 50%;
           object-fit: cover;
-          border: 2px solid #9B7653;
+          border: 2px solid #059669;
           box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
           animation: fade-in-scale 0.6s ease;
         }
@@ -235,7 +235,7 @@ export default function LandingPage() {
         }
 
         .modal-close:hover {
-          color: #9B7653;
+          color: #059669;
         }
 
         .form-group {
@@ -293,7 +293,7 @@ export default function LandingPage() {
         .form-button {
           width: 100%;
           padding: 14px 24px;
-          background: linear-gradient(135deg, #9B7653 0%, #A0826D 100%);
+          background: linear-gradient(135deg, #059669 0%, #0F766E 100%);
           color: #080A0D;
           border: none;
           border-radius: 8px;
@@ -479,12 +479,12 @@ export default function LandingPage() {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <div style={{ fontSize: '18px', fontWeight: '600', color: '#9B7653' }}>Patrick Trues</div>
+        <div style={{ fontSize: '18px', fontWeight: '600', color: '#059669' }}>Patrick Trues</div>
         <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
           <a href="#work" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px', cursor: 'pointer' }}>Work</a>
           <a href="#services" style={{ color: '#F5F3EE', textDecoration: 'none', fontSize: '14px', cursor: 'pointer' }}>Services</a>
           <button style={{
-            background: '#9B7653',
+            background: '#059669',
             color: '#080A0D',
             border: 'none',
             padding: '10px 20px',
@@ -513,7 +513,7 @@ export default function LandingPage() {
           <div style={{
             fontSize: '12px',
             fontWeight: '600',
-            color: '#9B7653',
+            color: '#059669',
             textTransform: 'uppercase',
             letterSpacing: '3px',
             marginBottom: '24px',
@@ -543,7 +543,7 @@ export default function LandingPage() {
           }}>
             I'm Patrick Trues, a software builder focused on AI automation and custom web solutions.
             <br /><br />
-            By day, I build <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{ color: '#9B7653', textDecoration: 'none', fontWeight: '700', cursor: 'pointer' }}>Afrovia</a>—a marketplace connecting African communities in Europe with verified service providers.
+            By day, I build <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{ color: '#059669', textDecoration: 'none', fontWeight: '700', cursor: 'pointer' }}>Afrovia</a>—a marketplace connecting African communities in Europe with verified service providers.
             <br /><br />
             By side, I help businesses automate workflows with AI and build custom websites that actually convert.
           </p>
@@ -555,7 +555,7 @@ export default function LandingPage() {
             marginTop: '40px'
           }}>
             <button style={{
-              background: 'linear-gradient(135deg, #9B7653 0%, #A0826D 100%)',
+              background: 'linear-gradient(135deg, #059669 0%, #0F766E 100%)',
               color: '#080A0D',
               border: 'none',
               padding: '18px 42px',
@@ -582,8 +582,8 @@ export default function LandingPage() {
             </button>
             <button style={{
               background: 'transparent',
-              border: '2px solid #9B7653',
-              color: '#9B7653',
+              border: '2px solid #059669',
+              color: '#059669',
               padding: '16px 40px',
               borderRadius: '10px',
               fontSize: '16px',
@@ -592,13 +592,13 @@ export default function LandingPage() {
               transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
               letterSpacing: '0.5px'
             }} onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#9B7653';
+              e.currentTarget.style.background = '#059669';
               e.currentTarget.style.color = '#080A0D';
               e.currentTarget.style.transform = 'translateY(-4px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#9B7653';
+              e.currentTarget.style.color = '#059669';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
             onClick={() => setShowModal(true)}>
@@ -649,7 +649,7 @@ export default function LandingPage() {
             <div style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: '#9B7653',
+              color: '#059669',
               textTransform: 'uppercase',
               letterSpacing: '2px',
               marginBottom: '16px'
@@ -687,7 +687,7 @@ export default function LandingPage() {
               fontSize: '16px',
               lineHeight: '1.8'
             }}>
-              <strong style={{ color: '#9B7653' }}>What it does:</strong>
+              <strong style={{ color: '#059669' }}>What it does:</strong>
               <ul style={{ margin: '16px 0', paddingLeft: '20px' }}>
                 <li>Provider discovery and verification</li>
                 <li>Service booking and management</li>
@@ -710,7 +710,7 @@ export default function LandingPage() {
               textAlign: 'center'
             }}>
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>🤝</div>
-              <div style={{ color: '#9B7653', fontWeight: '600', marginBottom: '8px' }}>Provider Network</div>
+              <div style={{ color: '#059669', fontWeight: '600', marginBottom: '8px' }}>Provider Network</div>
               <div style={{ fontSize: '14px', color: '#9CA3AF' }}>Verified African service providers</div>
             </div>
             <div style={{
@@ -721,7 +721,7 @@ export default function LandingPage() {
               textAlign: 'center'
             }}>
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>🌍</div>
-              <div style={{ color: '#C8A882', fontWeight: '600', marginBottom: '8px' }}>European Reach</div>
+              <div style={{ color: '#147369', fontWeight: '600', marginBottom: '8px' }}>European Reach</div>
               <div style={{ fontSize: '14px', color: '#9CA3AF' }}>Diaspora communities across Europe</div>
             </div>
             <div style={{
@@ -732,7 +732,7 @@ export default function LandingPage() {
               textAlign: 'center'
             }}>
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>✓</div>
-              <div style={{ color: '#9B7653', fontWeight: '600', marginBottom: '8px' }}>Trust System</div>
+              <div style={{ color: '#059669', fontWeight: '600', marginBottom: '8px' }}>Trust System</div>
               <div style={{ fontSize: '14px', color: '#9CA3AF' }}>Ratings and verification</div>
             </div>
           </div>
@@ -740,22 +740,22 @@ export default function LandingPage() {
           <div style={{ marginTop: '40px' }}>
             <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{
               display: 'inline-block',
-              color: '#9B7653',
+              color: '#059669',
               textDecoration: 'none',
               fontSize: '16px',
               fontWeight: '600',
               padding: '12px 24px',
-              border: '1px solid #9B7653',
+              border: '1px solid #059669',
               borderRadius: '6px',
               transition: 'all 0.3s ease',
               cursor: 'pointer',
               background: 'transparent'
             }} onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#9B7653';
+              e.currentTarget.style.background = '#059669';
               e.currentTarget.style.color = '#080A0D';
             }} onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#9B7653';
+              e.currentTarget.style.color = '#059669';
             }}>
               Explore Afrovia →
             </a>
@@ -792,7 +792,7 @@ export default function LandingPage() {
               <div style={{
                 fontSize: 'clamp(32px, 8vw, 48px)',
                 fontWeight: '700',
-                color: '#C8A882',
+                color: '#147369',
                 marginBottom: '8px'
               }}>
                 3+
@@ -807,7 +807,7 @@ export default function LandingPage() {
               <div style={{
                 width: '60px',
                 height: '3px',
-                background: 'linear-gradient(90deg, #C8A882 0%, transparent 100%)',
+                background: 'linear-gradient(90deg, #147369 0%, transparent 100%)',
                 margin: '12px auto 0'
               }} />
             </div>
@@ -828,7 +828,7 @@ export default function LandingPage() {
               <div style={{
                 fontSize: 'clamp(32px, 8vw, 48px)',
                 fontWeight: '700',
-                color: '#C8A882',
+                color: '#147369',
                 marginBottom: '8px'
               }}>
                 30+
@@ -843,7 +843,7 @@ export default function LandingPage() {
               <div style={{
                 width: '60px',
                 height: '3px',
-                background: 'linear-gradient(90deg, #C8A882 0%, transparent 100%)',
+                background: 'linear-gradient(90deg, #147369 0%, transparent 100%)',
                 margin: '12px auto 0'
               }} />
             </div>
@@ -864,7 +864,7 @@ export default function LandingPage() {
               <div style={{
                 fontSize: 'clamp(32px, 8vw, 48px)',
                 fontWeight: '700',
-                color: '#C8A882',
+                color: '#147369',
                 marginBottom: '8px'
               }}>
                 25+
@@ -879,7 +879,7 @@ export default function LandingPage() {
               <div style={{
                 width: '60px',
                 height: '3px',
-                background: 'linear-gradient(90deg, #C8A882 0%, transparent 100%)',
+                background: 'linear-gradient(90deg, #147369 0%, transparent 100%)',
                 margin: '12px auto 0'
               }} />
             </div>
@@ -898,7 +898,7 @@ export default function LandingPage() {
             <div style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: '#9B7653',
+              color: '#059669',
               textTransform: 'uppercase',
               letterSpacing: '2px',
               marginBottom: '16px'
@@ -944,7 +944,7 @@ export default function LandingPage() {
                 transition: 'all 0.3s ease',
                 cursor: 'pointer'
               }} onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#9B7653';
+                e.currentTarget.style.borderColor = '#059669';
                 e.currentTarget.style.background = 'rgba(255, 107, 53, 0.05)';
               }} onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.15)';
@@ -974,7 +974,7 @@ export default function LandingPage() {
             <div style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: '#C8A882',
+              color: '#147369',
               textTransform: 'uppercase',
               letterSpacing: '2px',
               marginBottom: '16px'
@@ -1018,7 +1018,7 @@ export default function LandingPage() {
                   border: '1px solid rgba(216, 155, 50, 0.2)',
                   borderRadius: '6px',
                   textAlign: 'center',
-                  color: '#C8A882',
+                  color: '#147369',
                   fontWeight: '500'
                 }}>
                   {tech}
@@ -1044,7 +1044,7 @@ export default function LandingPage() {
             textAlign: 'center'
           }}>
             <span style={{ color: '#080A0D' }}>Featured </span>
-            <span style={{ color: '#C8A882' }}>projects</span>
+            <span style={{ color: '#147369' }}>projects</span>
           </h2>
 
           <div style={{
@@ -1087,27 +1087,27 @@ export default function LandingPage() {
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>React</span>
                 <span style={{
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>Node.js</span>
                 <span style={{
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>Supabase</span>
               </div>
               <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{
                 fontSize: '14px',
-                color: '#9B7653',
+                color: '#059669',
                 textDecoration: 'none',
                 fontWeight: '600',
                 cursor: 'pointer'
@@ -1151,21 +1151,21 @@ export default function LandingPage() {
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>n8n</span>
                 <span style={{
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>OpenAI</span>
                 <span style={{
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>ManyChat</span>
               </div>
@@ -1174,7 +1174,7 @@ export default function LandingPage() {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }} style={{
                 fontSize: '14px',
-                color: '#9B7653',
+                color: '#059669',
                 textDecoration: 'none',
                 fontWeight: '600',
                 cursor: 'pointer',
@@ -1221,21 +1221,21 @@ export default function LandingPage() {
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>Next.js</span>
                 <span style={{
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>React</span>
                 <span style={{
                   fontSize: '12px',
                   padding: '6px 12px',
                   background: 'rgba(216, 155, 50, 0.1)',
-                  color: '#C8A882',
+                  color: '#147369',
                   borderRadius: '6px'
                 }}>Tailwind</span>
               </div>
@@ -1244,7 +1244,7 @@ export default function LandingPage() {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }} style={{
                 fontSize: '14px',
-                color: '#9B7653',
+                color: '#059669',
                 textDecoration: 'none',
                 fontWeight: '600',
                 cursor: 'pointer',
@@ -1301,7 +1301,7 @@ export default function LandingPage() {
                 padding: '40px',
                 transition: 'all 0.3s ease'
               }} onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#9B7653';
+                e.currentTarget.style.borderColor = '#059669';
                 e.currentTarget.style.transform = 'translateY(-5px)';
               }} onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.15)';
@@ -1361,7 +1361,7 @@ export default function LandingPage() {
             flexWrap: 'wrap'
           }}>
             <button style={{
-              background: '#9B7653',
+              background: '#059669',
               color: '#080A0D',
               border: 'none',
               padding: '16px 40px',
@@ -1378,8 +1378,8 @@ export default function LandingPage() {
             </button>
             <a href="https://www.instagram.com/innerforge0/" target="_blank" rel="noopener noreferrer" style={{
               background: 'transparent',
-              color: '#9B7653',
-              border: '2px solid #9B7653',
+              color: '#059669',
+              border: '2px solid #059669',
               padding: '14px 38px',
               borderRadius: '8px',
               fontSize: '16px',
@@ -1390,11 +1390,11 @@ export default function LandingPage() {
               display: 'inline-block',
               touchAction: 'manipulation'
             }} onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#9B7653';
+              e.currentTarget.style.background = '#059669';
               e.currentTarget.style.color = '#080A0D';
             }} onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#9B7653';
+              e.currentTarget.style.color = '#059669';
             }}>
               Follow My Journey
             </a>
@@ -1416,7 +1416,7 @@ export default function LandingPage() {
             marginBottom: '60px'
           }}>
             <div>
-              <div style={{ fontSize: '14px', fontWeight: '600', color: '#9B7653', textTransform: 'uppercase', marginBottom: '16px' }}>
+              <div style={{ fontSize: '14px', fontWeight: '600', color: '#059669', textTransform: 'uppercase', marginBottom: '16px' }}>
                 Connect
               </div>
               <div style={{
@@ -1430,7 +1430,7 @@ export default function LandingPage() {
                   transition: 'color 0.3s',
                   cursor: 'pointer',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#9B7653'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → YouTube
                 </a>
@@ -1440,7 +1440,7 @@ export default function LandingPage() {
                   transition: 'color 0.3s',
                   cursor: 'pointer',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#9B7653'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Instagram
                 </a>
@@ -1450,7 +1450,7 @@ export default function LandingPage() {
                   transition: 'color 0.3s',
                   cursor: 'pointer',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#9B7653'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Email: patrickaiya3@gmail.com
                 </a>
@@ -1460,7 +1460,7 @@ export default function LandingPage() {
                   transition: 'color 0.3s',
                   cursor: 'pointer',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#9B7653'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → WhatsApp: +41 77 913 1342
                 </a>
@@ -1468,7 +1468,7 @@ export default function LandingPage() {
             </div>
 
             <div>
-              <div style={{ fontSize: '14px', fontWeight: '600', color: '#C8A882', textTransform: 'uppercase', marginBottom: '16px' }}>
+              <div style={{ fontSize: '14px', fontWeight: '600', color: '#147369', textTransform: 'uppercase', marginBottom: '16px' }}>
                 Projects
               </div>
               <div style={{
@@ -1482,7 +1482,7 @@ export default function LandingPage() {
                   transition: 'color 0.3s',
                   cursor: 'pointer',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#C8A882'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#147369'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Afrovia
                 </a>
@@ -1497,7 +1497,7 @@ export default function LandingPage() {
                   fontSize: 'inherit',
                   fontFamily: 'inherit',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#C8A882'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#147369'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Web Projects
                 </button>
@@ -1505,7 +1505,7 @@ export default function LandingPage() {
             </div>
 
             <div>
-              <div style={{ fontSize: '14px', fontWeight: '600', color: '#9B7653', textTransform: 'uppercase', marginBottom: '16px' }}>
+              <div style={{ fontSize: '14px', fontWeight: '600', color: '#059669', textTransform: 'uppercase', marginBottom: '16px' }}>
                 Services
               </div>
               <div style={{
@@ -1527,7 +1527,7 @@ export default function LandingPage() {
                   fontSize: 'inherit',
                   fontFamily: 'inherit',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#9B7653'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → AI Automation
                 </button>
@@ -1545,7 +1545,7 @@ export default function LandingPage() {
                   fontSize: 'inherit',
                   fontFamily: 'inherit',
                   touchAction: 'manipulation'
-                }} onMouseEnter={(e) => e.currentTarget.style.color = '#9B7653'}
+                }} onMouseEnter={(e) => e.currentTarget.style.color = '#059669'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#9CA3AF'}>
                   → Web Development
                 </button>
