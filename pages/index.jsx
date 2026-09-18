@@ -618,16 +618,16 @@ export default function LandingPage() {
           <div className="carousel-container">
             {/* Orbiting provider images - Diverse */}
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Black Male Provider" />
+              <img src="/chef.jpg" alt="Black Male Provider" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop" alt="Black Female Provider" />
+              <img src="/barber.jpg" alt="Black Female Provider" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop" alt="White Female Provider" />
+              <img src="/doctotr.jpg" alt="White Female Provider" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1507051957259-fe2df1d68ecb?w=120&h=120&fit=crop" alt="White Male Provider" />
+              <img src="/engineer.jpg" alt="White Male Provider" />
             </div>
 
             {/* Center image */}
