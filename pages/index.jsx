@@ -661,18 +661,18 @@ export default function LandingPage() {
           minHeight: '500px'
         }} className="hero-image">
           <div className="carousel-container">
-            {/* Orbiting provider images - Diverse */}
+            {/* Orbiting provider images - Real professional photos */}
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Black Male Provider" />
+              <img src="/chef.jpg" alt="Chef Professional" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop" alt="Black Female Provider" />
+              <img src="/barber.jpg" alt="Barber Professional" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop" alt="White Female Provider" />
+              <img src="/doctotr.jpg" alt="Doctor Professional" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1507051957259-fe2df1d68ecb?w=120&h=120&fit=crop" alt="White Male Provider" />
+              <img src="/engineer.jpg" alt="Engineer Professional" />
             </div>
 
             {/* Center image */}
