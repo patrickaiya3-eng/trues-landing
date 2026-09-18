@@ -26,11 +26,35 @@ export default function LandingPage() {
     }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0AProject Type: ${formData.projectType}%0A%0AMessage:%0A${formData.message}`;
-    window.location.href = `mailto:patrickaiya3@gmail.com?subject=Project Inquiry from ${formData.name}&body=${encodeURIComponent(message)}`;
-    setShowModal(false);
+    
+    try {
+      // Send data to n8n webhook
+      const response = await fetch('https://n8n.srv1230177.hstgr.cloud/webhook-test/contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          projectType: formData.projectType,
+          message: formData.message,
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      if (response.ok) {
+        alert('✅ Message sent! I'll get back to you within 24 hours.');
+        setFormData({ name: '', email: '', message: '', projectType: '' });
+        setShowModal(false);
+      } else {
+        alert('Error sending message. Please try again.');
+      }
+    } catch (error) {
+      alert('Error: ' + error.message);
+    }
   };
 
   const handleWaitlistSubmit = (e) => {
