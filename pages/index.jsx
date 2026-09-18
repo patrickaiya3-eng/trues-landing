@@ -585,8 +585,8 @@ export default function LandingPage() {
               fontWeight: '700',
               cursor: 'pointer',
               transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              boxShadow: '0 10px 30px rgba(16, 185, 129, 0.3)',,
-              animation: 'glow-pulse 2s ease-in-out infinite'}
+              boxShadow: '0 10px 30px rgba(16, 185, 129, 0.3)',
+              
             }} onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-4px)';
               e.currentTarget.style.boxShadow = '0 20px 40px rgba(16, 185, 129, 0.4)';
