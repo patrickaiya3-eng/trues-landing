@@ -73,8 +73,22 @@ export default function LandingPage() {
         }
 
         @keyframes orbit {
-          0% { transform: rotateZ(0deg) translateX(150px) rotateZ(0deg); }
-          100% { transform: rotateZ(360deg) translateX(150px) rotateZ(-360deg); }
+          0% { transform: rotateZ(0deg) translateX(120px) rotateZ(0deg); }
+          100% { transform: rotateZ(360deg) translateX(120px) rotateZ(-360deg); }
+        }
+
+        @media (max-width: 768px) {
+          @keyframes orbit {
+            0% { transform: rotateZ(0deg) translateX(90px) rotateZ(0deg); }
+            100% { transform: rotateZ(360deg) translateX(90px) rotateZ(-360deg); }
+          }
+        }
+
+        @media (max-width: 480px) {
+          @keyframes orbit {
+            0% { transform: rotateZ(0deg) translateX(70px) rotateZ(0deg); }
+            100% { transform: rotateZ(360deg) translateX(70px) rotateZ(-360deg); }
+          }
         }
 
         @keyframes fade-in-scale {
@@ -148,10 +162,36 @@ export default function LandingPage() {
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
+            padding: 60px 20px !important;
           }
           
           .nav-links {
             display: none !important;
+          }
+
+          .carousel-container {
+            width: 350px !important;
+            height: 350px !important;
+          }
+
+          .carousel-center {
+            width: 200px !important;
+            height: 200px !important;
+          }
+
+          .carousel-center img {
+            width: 180px !important;
+            height: 180px !important;
+          }
+
+          .orbit-item {
+            width: 70px !important;
+            height: 70px !important;
+          }
+
+          .orbit-item img {
+            width: 60px !important;
+            height: 60px !important;
           }
         }
         
@@ -174,6 +214,31 @@ export default function LandingPage() {
           
           .section-padding {
             padding: 60px 20px !important;
+          }
+
+          .carousel-container {
+            width: 280px !important;
+            height: 280px !important;
+          }
+
+          .carousel-center {
+            width: 160px !important;
+            height: 160px !important;
+          }
+
+          .carousel-center img {
+            width: 145px !important;
+            height: 145px !important;
+          }
+
+          .orbit-item {
+            width: 55px !important;
+            height: 55px !important;
+          }
+
+          .orbit-item img {
+            width: 48px !important;
+            height: 48px !important;
           }
         }
       `}</style>
@@ -249,28 +314,19 @@ export default function LandingPage() {
             I'm Patrick Trues.
           </h1>
 
-          <h2 style={{
-            fontSize: 'clamp(28px, 7vw, 56px)',
-            fontWeight: '700',
-            lineHeight: '1.15',
-            marginBottom: '40px',
-            background: 'linear-gradient(135deg, #D89B32 0%, #FF6B35 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            I build digital products, AI automations & web experiences.
-          </h2>
-
           <p style={{
             fontSize: 'clamp(16px, 4vw, 20px)',
             lineHeight: '1.8',
             color: '#9CA3AF',
             marginBottom: '48px',
-            maxWidth: '550px',
+            maxWidth: '600px',
             fontWeight: '500'
           }}>
-            Currently building <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B35', textDecoration: 'none', fontWeight: '700', cursor: 'pointer', borderBottom: '2px solid #FF6B35' }}>Afrovia</a> — a marketplace connecting African diaspora communities in Europe with verified local service providers.
+            I'm Patrick Trues, a software builder focused on AI automation and custom web solutions.
+            <br /><br />
+            By day, I build <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B35', textDecoration: 'none', fontWeight: '700', cursor: 'pointer' }}>Afrovia</a>—a marketplace connecting African communities in Europe with verified service providers.
+            <br /><br />
+            By side, I help businesses automate workflows with AI and build custom websites that actually convert.
           </p>
 
           <div style={{
@@ -344,18 +400,18 @@ export default function LandingPage() {
           minHeight: '500px'
         }} className="hero-image">
           <div className="carousel-container">
-            {/* Orbiting provider images */}
+            {/* Orbiting provider images - Diverse */}
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop" alt="Provider 1" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Black Male Provider" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Provider 2" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop" alt="Black Female Provider" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop" alt="Provider 3" />
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop" alt="White Female Provider" />
             </div>
             <div className="orbit-item">
-              <img src="https://images.unsplash.com/photo-1507051957259-fe2df1d68ecb?w=120&h=120&fit=crop" alt="Provider 4" />
+              <img src="https://images.unsplash.com/photo-1507051957259-fe2df1d68ecb?w=120&h=120&fit=crop" alt="White Male Provider" />
             </div>
 
             {/* Center image */}
@@ -487,6 +543,130 @@ export default function LandingPage() {
             }}>
               Explore Afrovia →
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS SECTION */}
+      <section className="section-padding" style={{
+        padding: '80px 40px',
+        background: '#11151B',
+        borderTop: '1px solid rgba(255, 107, 53, 0.1)'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '40px',
+            textAlign: 'center'
+          }}>
+            {/* Years Experience */}
+            <div style={{
+              background: '#080A0D',
+              padding: '40px 30px',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 107, 53, 0.1)'
+            }}>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '16px'
+              }}>
+                📚
+              </div>
+              <div style={{
+                fontSize: 'clamp(32px, 8vw, 48px)',
+                fontWeight: '700',
+                color: '#D89B32',
+                marginBottom: '8px'
+              }}>
+                3+
+              </div>
+              <div style={{
+                fontSize: '16px',
+                color: '#9CA3AF',
+                fontWeight: '500'
+              }}>
+                Years experience
+              </div>
+              <div style={{
+                width: '60px',
+                height: '3px',
+                background: 'linear-gradient(90deg, #D89B32 0%, transparent 100%)',
+                margin: '12px auto 0'
+              }} />
+            </div>
+
+            {/* Projects */}
+            <div style={{
+              background: '#080A0D',
+              padding: '40px 30px',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 107, 53, 0.1)'
+            }}>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '16px'
+              }}>
+                🎯
+              </div>
+              <div style={{
+                fontSize: 'clamp(32px, 8vw, 48px)',
+                fontWeight: '700',
+                color: '#D89B32',
+                marginBottom: '8px'
+              }}>
+                30+
+              </div>
+              <div style={{
+                fontSize: '16px',
+                color: '#9CA3AF',
+                fontWeight: '500'
+              }}>
+                Projects shipped
+              </div>
+              <div style={{
+                width: '60px',
+                height: '3px',
+                background: 'linear-gradient(90deg, #D89B32 0%, transparent 100%)',
+                margin: '12px auto 0'
+              }} />
+            </div>
+
+            {/* Clients */}
+            <div style={{
+              background: '#080A0D',
+              padding: '40px 30px',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 107, 53, 0.1)'
+            }}>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '16px'
+              }}>
+                😊
+              </div>
+              <div style={{
+                fontSize: 'clamp(32px, 8vw, 48px)',
+                fontWeight: '700',
+                color: '#D89B32',
+                marginBottom: '8px'
+              }}>
+                25+
+              </div>
+              <div style={{
+                fontSize: '16px',
+                color: '#9CA3AF',
+                fontWeight: '500'
+              }}>
+                Happy clients
+              </div>
+              <div style={{
+                width: '60px',
+                height: '3px',
+                background: 'linear-gradient(90deg, #D89B32 0%, transparent 100%)',
+                margin: '12px auto 0'
+              }} />
+            </div>
           </div>
         </div>
       </section>
@@ -628,6 +808,236 @@ export default function LandingPage() {
                   {tech}
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED PROJECTS */}
+      <section className="section-padding" style={{
+        padding: '100px 40px',
+        background: '#11151B',
+        borderTop: '1px solid rgba(255, 107, 53, 0.1)'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: 'clamp(32px, 8vw, 48px)',
+            fontWeight: '700',
+            color: '#F5F3EE',
+            marginBottom: '60px',
+            textAlign: 'center'
+          }}>
+            <span style={{ color: '#080A0D' }}>Featured </span>
+            <span style={{ color: '#D89B32' }}>projects</span>
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '40px'
+          }}>
+            {/* Project 1 - Afrovia */}
+            <div style={{
+              background: '#080A0D',
+              padding: '32px',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 107, 53, 0.1)',
+              transition: 'all 0.3s ease'
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-8px)';
+              e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.1)';
+            }}>
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: '700',
+                color: '#F5F3EE',
+                marginBottom: '12px'
+              }}>
+                Afrovia
+              </h3>
+              <p style={{
+                fontSize: '14px',
+                color: '#9CA3AF',
+                marginBottom: '24px',
+                lineHeight: '1.6'
+              }}>
+                Marketplace connecting African diaspora in Europe with verified service providers
+              </p>
+              <div style={{ marginBottom: '20px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>React</span>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>Node.js</span>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>Supabase</span>
+              </div>
+              <a href="https://www.afroviaconnect.com" target="_blank" rel="noopener noreferrer" style={{
+                fontSize: '14px',
+                color: '#FF6B35',
+                textDecoration: 'none',
+                fontWeight: '600',
+                cursor: 'pointer'
+              }}>
+                View project →
+              </a>
+            </div>
+
+            {/* Project 2 - AI Automation */}
+            <div style={{
+              background: '#080A0D',
+              padding: '32px',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 107, 53, 0.1)',
+              transition: 'all 0.3s ease'
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-8px)';
+              e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.1)';
+            }}>
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: '700',
+                color: '#F5F3EE',
+                marginBottom: '12px'
+              }}>
+                AI Workflow Automation
+              </h3>
+              <p style={{
+                fontSize: '14px',
+                color: '#9CA3AF',
+                marginBottom: '24px',
+                lineHeight: '1.6'
+              }}>
+                Custom n8n workflows that automate business processes and save thousands in manual work
+              </p>
+              <div style={{ marginBottom: '20px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>n8n</span>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>OpenAI</span>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>ManyChat</span>
+              </div>
+              <button onClick={() => {
+                const el = document.getElementById('services');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }} style={{
+                fontSize: '14px',
+                color: '#FF6B35',
+                textDecoration: 'none',
+                fontWeight: '600',
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
+                padding: 0
+              }}>
+                View project →
+              </button>
+            </div>
+
+            {/* Project 3 - Web Development */}
+            <div style={{
+              background: '#080A0D',
+              padding: '32px',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 107, 53, 0.1)',
+              transition: 'all 0.3s ease'
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-8px)';
+              e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.borderColor = 'rgba(255, 107, 53, 0.1)';
+            }}>
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: '700',
+                color: '#F5F3EE',
+                marginBottom: '12px'
+              }}>
+                Custom Web Apps
+              </h3>
+              <p style={{
+                fontSize: '14px',
+                color: '#9CA3AF',
+                marginBottom: '24px',
+                lineHeight: '1.6'
+              }}>
+                Modern, fast, and conversion-focused web applications built with React and Next.js
+              </p>
+              <div style={{ marginBottom: '20px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>Next.js</span>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>React</span>
+                <span style={{
+                  fontSize: '12px',
+                  padding: '6px 12px',
+                  background: 'rgba(216, 155, 50, 0.1)',
+                  color: '#D89B32',
+                  borderRadius: '6px'
+                }}>Tailwind</span>
+              </div>
+              <button onClick={() => {
+                const el = document.getElementById('services');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }} style={{
+                fontSize: '14px',
+                color: '#FF6B35',
+                textDecoration: 'none',
+                fontWeight: '600',
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
+                padding: 0
+              }}>
+                View project →
+              </button>
             </div>
           </div>
         </div>
